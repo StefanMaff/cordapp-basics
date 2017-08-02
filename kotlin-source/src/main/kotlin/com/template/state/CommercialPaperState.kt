@@ -31,7 +31,8 @@ import java.util.*
 
 //States are immutables, so the class is defined immutable as well, the data modifier generates the equals/hashCode/toString methods automatically, along with a copy() method
 //that can be used to create variants of the original object.
-data class commercialPaperState(
+
+data class CommercialPaperState(
         val issuance: PartyAndReference,
         override val owner: AbstractParty,
         val faceValue: Amount<Issued<Currency>>,
@@ -60,10 +61,13 @@ data class commercialPaperState(
 *
 * */
 
-//Let's define some commands throught an interface
+//Let's define some commands through an interface, this is a grouping interface or static class, this gives us a type that all our commands have in common, then we go ahead
+// and create three commands, Move, Redeem, Issue.
 
 interface Commands : CommandData {
 
+    //TypeOnlyCommanddata() is a helpful utility (abstract class) for the case when there's no data inside the command, only the existence matters
+    // It defines equals and hashCode such that any istance compare equals and hash to the same value
     class Move: TypeOnlyCommandData(), Commands
     class Redeem: TypeOnlyCommandData(), Commands
     class Issue: TypeOnlyCommandData(), Commands
