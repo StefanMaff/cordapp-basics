@@ -38,6 +38,14 @@ data class CommercialPaperState(
         val faceValue: Amount<Issued<Currency>>,
         val maturityDate: Instant
 ) : OwnableState {
+
+/*    data class Terms (
+            val asset: Issued<Currency>,
+            val maturityDate: Instant
+    )
+
+    This is in the contract :V
+    */
     //The ContractState interface (implemented indirectly) requires us to provide a getContract method that returns an instance of the CommercialPaperContract itself
     // N.B. In future, this may change to support dynamic loading of contracts with versioning and signing constraints
     override val contract: Contract = CommercialPaperContract()
