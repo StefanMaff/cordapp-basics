@@ -11,6 +11,7 @@ import java.util.*
 
 /**
  * Created by stese on 01/08/2017.
+ * CIAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
  */
 
 //States are necessaries, a state is a class that is checked by the contract
